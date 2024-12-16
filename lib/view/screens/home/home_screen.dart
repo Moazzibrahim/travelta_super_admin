@@ -62,8 +62,8 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: SizedBox(
-                      height: 120,
-                      child: GridItem(
+                      height: 130,
+                      child: SignupApproveItem(
                         imagePath:
                             'assets/images/true-check-accept-approve.png',
                         label: 'Signup Approve',
@@ -112,9 +112,52 @@ class GridItem extends StatelessWidget {
           const SizedBox(height: 8),
           Image.asset(
             imagePath,
+            height: 70,
+            width: 70,
+            fit: BoxFit.cover,
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class SignupApproveItem extends StatelessWidget {
+  final String imagePath;
+  final String label;
+
+  const SignupApproveItem({
+    super.key,
+    required this.imagePath,
+    required this.label,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: maincolor.withOpacity(0.2), width: 1),
+      ),
+      child: Row(
+        mainAxisAlignment:
+            MainAxisAlignment.center, // Centers content horizontally
+        children: [
+          Image.asset(
+            imagePath,
             height: 60,
             width: 60,
             fit: BoxFit.cover,
+          ),
+          const SizedBox(width: 12), // Space between image and text
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: maincolor,
+            ),
           ),
         ],
       ),
