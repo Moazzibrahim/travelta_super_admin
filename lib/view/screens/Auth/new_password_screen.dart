@@ -126,7 +126,7 @@ class _NewPasswordScreenState extends State<NewPasswordScreen> {
                   // Handle send button action
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: mainColor,
+                  backgroundColor: maincolor,
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),

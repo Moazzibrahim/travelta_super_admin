@@ -12,8 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        textTheme: GoogleFonts.interTextTheme(),
+      ),
       title: 'Travelta super admin',
-      home: SplashScreen(),
+      home: const SplashScreen(),
     );
   }
 }

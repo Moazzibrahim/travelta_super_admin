@@ -67,7 +67,7 @@ class OTPVerificationScreen extends StatelessWidget {
                     color: Colors.black,
                   ),
                   decoration: BoxDecoration(
-                    border: Border.all(color: mainColor),
+                    border: Border.all(color: maincolor),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
@@ -80,7 +80,7 @@ class OTPVerificationScreen extends StatelessWidget {
                     color: Colors.black,
                   ),
                   decoration: BoxDecoration(
-                    border: Border.all(color: mainColor, width: 2),
+                    border: Border.all(color: maincolor, width: 2),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
@@ -101,7 +101,7 @@ class OTPVerificationScreen extends StatelessWidget {
                 child: Text(
                   'Don’t Receive Code? Re-Send',
                   style: TextStyle(
-                    color: mainColor,
+                    color: maincolor,
                     fontWeight: FontWeight.w400,
                     fontSize: 16,
                   ),
@@ -122,7 +122,7 @@ class OTPVerificationScreen extends StatelessWidget {
                             builder: (context) => const NewPasswordScreen()));
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: mainColor,
+                    backgroundColor: maincolor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

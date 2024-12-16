@@ -55,11 +55,11 @@ class ForgotPasswordScreen extends StatelessWidget {
                     const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: mainColor),
+                  borderSide: BorderSide(color: maincolor),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8),
-                  borderSide: BorderSide(color: mainColor),
+                  borderSide: BorderSide(color: maincolor),
                 ),
               ),
             ),
@@ -77,7 +77,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                           builder: (context) => const OTPVerificationScreen()));
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: mainColor,
+                  backgroundColor: maincolor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
                   ),
