@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/colors.dart';
+import 'package:flutter_application_1/view/screens/client/client_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -28,28 +29,37 @@ class HomeScreen extends StatelessWidget {
                 crossAxisCount: 2,
                 crossAxisSpacing: 16,
                 mainAxisSpacing: 16,
-                children: const [
-                  GridItem(
-                    imagePath: 'assets/images/4243325_users_people_icon 1.png',
-                    label: 'Client',
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ClientScreen()));
+                    },
+                    child: const GridItem(
+                      imagePath:
+                          'assets/images/4243325_users_people_icon 1.png',
+                      label: 'Client',
+                    ),
                   ),
-                  GridItem(
+                  const GridItem(
                     imagePath: 'assets/images/Icon Container.png',
                     label: 'Tourism Companies',
                   ),
-                  GridItem(
+                  const GridItem(
                     imagePath: 'assets/images/Menu Icon.png',
                     label: 'Hotels',
                   ),
-                  GridItem(
+                  const GridItem(
                     imagePath: 'assets/images/Menu Icon (1).png',
                     label: 'Booking',
                   ),
-                  GridItem(
+                  const GridItem(
                     imagePath: 'assets/images/Menu Icon Container.png',
                     label: 'Pending Payment',
                   ),
-                  GridItem(
+                  const GridItem(
                     imagePath: 'assets/images/Menu Icon Container (1).png',
                     label: 'Subscriptions',
                   ),
