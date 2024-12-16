@@ -63,7 +63,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: mainColor),
+                        borderSide: BorderSide(color: maincolor),
                       ),
                     ),
                   ),
@@ -79,7 +79,7 @@ class LoginScreen extends StatelessWidget {
                       suffixIcon: IconButton(
                         icon: Icon(
                           Icons.visibility_off,
-                          color: mainColor,
+                          color: maincolor,   
                         ),
                         onPressed: () {},
                       ),
@@ -89,7 +89,7 @@ class LoginScreen extends StatelessWidget {
                       ),
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8),
-                        borderSide: BorderSide(color: mainColor),
+                        borderSide: BorderSide(color: maincolor),
                       ),
                     ),
                   ),
@@ -107,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                       child: Text(
                         "Forgot Password ?",
                         style: TextStyle(
-                            color: mainColor,
+                            color: maincolor,
                             decoration: TextDecoration.underline),
                       ),
                     ),
@@ -125,7 +125,7 @@ class LoginScreen extends StatelessWidget {
                         //         builder: (context) => const AdminHomeScreen()));
                       },
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: mainColor,
+                        backgroundColor: maincolor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
@@ -161,7 +161,7 @@ class LoginScreen extends StatelessWidget {
                   //           TextSpan(
                   //             text: "Sign Up",
                   //             style: TextStyle(
-                  //                 color: mainColor,
+                  //                 color: maincolor,
                   //                 decoration: TextDecoration.underline),
                   //           ),
                   //         ],
