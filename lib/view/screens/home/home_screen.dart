@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/view/screens/Subscriptions/Subscriptions_screen.dart';
+import 'package:flutter_application_1/view/screens/Tourism_companies/tourism_companies_screen.dart';
 import 'package:flutter_application_1/view/screens/client/client_screen.dart';
 import 'package:flutter_application_1/view/screens/payment/pending_payment_screen.dart';
 import 'package:flutter_application_1/view/screens/signup/sign_up_screen.dart';
