@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/colors.dart';
+import 'package:flutter_application_1/view/screens/Subscriptions/Subscriptions_screen.dart';
 import 'package:flutter_application_1/view/screens/client/client_screen.dart';
+import 'package:flutter_application_1/view/screens/payment/pending_payment_screen.dart';
+import 'package:flutter_application_1/view/screens/signup/sign_up_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -33,9 +36,11 @@ class HomeScreen extends StatelessWidget {
                   InkWell(
                     onTap: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const ClientScreen()));
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ClientScreen(),
+                        ),
+                      );
                     },
                     child: const GridItem(
                       imagePath:
@@ -55,32 +60,62 @@ class HomeScreen extends StatelessWidget {
                     imagePath: 'assets/images/Menu Icon (1).png',
                     label: 'Booking',
                   ),
-                  const GridItem(
-                    imagePath: 'assets/images/Menu Icon Container.png',
-                    label: 'Pending Payment',
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const PaymentCardScreen(),
+                        ),
+                      );
+                    },
+                    child: const GridItem(
+                      imagePath: 'assets/images/Menu Icon Container.png',
+                      label: 'Pending Payment',
+                    ),
                   ),
-                  const GridItem(
-                    imagePath: 'assets/images/Menu Icon Container (1).png',
-                    label: 'Subscriptions',
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SubscriptionsScreen(),
+                        ),
+                      );
+                    },
+                    child: const GridItem(
+                      imagePath: 'assets/images/Menu Icon Container (1).png',
+                      label: 'Subscriptions',
+                    ),
                   ),
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Row(
-                children: [
-                  Expanded(
-                    child: SizedBox(
-                      height: 130,
-                      child: SignupApproveItem(
-                        imagePath:
-                            'assets/images/true-check-accept-approve.png',
-                        label: 'Signup Approve',
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SignUpScreen(),
+                  ),
+                );
+              },
+              child: const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: SizedBox(
+                        height: 130,
+                        child: SignupApproveItem(
+                          imagePath:
+                              'assets/images/true-check-accept-approve.png',
+                          label: 'Signup Approve',
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ],
