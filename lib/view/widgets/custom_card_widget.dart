@@ -1,89 +1,70 @@
 import 'package:flutter/material.dart';
 
-class OperationCard extends StatelessWidget {
-  final int index;
-  final String operationId;
-  final String clientName;
-  final String status;
-  final Color statusColor;
-  final Color statusTextColor;
-  final Color? borderColor;
-  final int selectedCardIndex;
-  final VoidCallback onTap;
+class CustomInfoCard extends StatelessWidget {
+  final List<InfoRowData> infoRows;
 
-  const OperationCard({
-    super.key,
-    required this.index,
-    required this.operationId,
-    required this.clientName,
-    required this.status,
-    required this.statusColor,
-    required this.statusTextColor,
-    this.borderColor,
-    required this.selectedCardIndex,
-    required this.onTap,
-  });
+  const CustomInfoCard({super.key, required this.infoRows});
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(16.0),
-        decoration: BoxDecoration(
-          color: selectedCardIndex == index
-              ? const Color.fromRGBO(255, 255, 255, 1)
-              : const Color.fromRGBO(231, 237, 246, 1),
-          borderRadius: BorderRadius.circular(12.0),
-          border: Border.all(
-            color: selectedCardIndex == index
-                ? Theme.of(context).primaryColor
-                : (borderColor ?? Colors.transparent),
-          ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Operation ID: $operationId',
-              style: const TextStyle(
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 8.0),
-            Text(
-              'Client Name: $clientName',
-              style: const TextStyle(fontSize: 16.0),
-            ),
-            const SizedBox(height: 8.0),
-            Row(
-              children: [
-                const Text(
-                  'Status: ',
-                  style: TextStyle(fontSize: 16.0),
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 8.0, vertical: 4.0),
-                  decoration: BoxDecoration(
-                    color: statusColor,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: Text(
-                    status,
-                    style: TextStyle(
-                      color: statusTextColor,
-                      fontSize: 14.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.all(12.0),
+      decoration: BoxDecoration(
+        color: const Color.fromRGBO(231, 237, 246, 1),
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: infoRows
+            .map((row) => _InfoRow(label: row.label, value: row.value))
+            .toList(),
       ),
     );
   }
+}
+
+// Info Row Widget
+class _InfoRow extends StatelessWidget {
+  final String label;
+  final String value;
+
+  const _InfoRow({required this.label, required this.value});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(
+            width: 150,
+            child: Text(
+              label,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14.0,
+              ),
+            ),
+          ),
+          Expanded(
+            child: Text(
+              value,
+              style: const TextStyle(fontSize: 14.0),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+// Data Model for Info Row
+class InfoRowData {
+  final String label;
+  final String value;
+
+  InfoRowData({required this.label, required this.value});
 }

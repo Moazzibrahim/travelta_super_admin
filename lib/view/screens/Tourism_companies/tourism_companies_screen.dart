@@ -1,35 +1,33 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/view/widgets/custom_appbar_widget.dart';
 import 'package:flutter_application_1/view/widgets/custom_card_widget.dart';
 
-class ClientScreen extends StatefulWidget {
-  const ClientScreen({super.key});
+class TourismCompaniesScreen extends StatefulWidget {
+  const TourismCompaniesScreen({super.key});
 
   @override
-  _ClientScreenState createState() => _ClientScreenState();
+  State<TourismCompaniesScreen> createState() => _TourismCompaniesScreenState();
 }
 
-class _ClientScreenState extends State<ClientScreen> {
+class _TourismCompaniesScreenState extends State<TourismCompaniesScreen> {
   int selectedCardIndex = -1;
 
   @override
   Widget build(BuildContext context) {
     final List<InfoRowData> clientInfo = [
-      InfoRowData(label: 'User Name:', value: 'Ali Hassan'),
+      InfoRowData(label: 'Name:', value: 'Ali Hassan'),
       InfoRowData(label: 'Email:', value: 'User1@Example.Com'),
       InfoRowData(label: 'Phone Number:', value: '01098765432'),
-      InfoRowData(label: 'Booking:', value: '2024-12-05'),
-      InfoRowData(label: 'Payment:', value: '5000 EGP'),
-      InfoRowData(label: 'Associated Company:', value: 'Travel Company'),
-      InfoRowData(label: 'Destination:', value: 'Paris, France'),
-      InfoRowData(label: 'Emergency Reference:', value: '100'),
+      InfoRowData(label: 'Phone Responsible:', value: '01098765432'),
+      InfoRowData(label: 'Joined Date:', value: '2024-12-05'),
+      InfoRowData(label: 'Total Commission:', value: '5000 EGP'),
+      InfoRowData(label: 'Total Bookings:', value: '200'),
+      InfoRowData(label: 'Wallet:', value: '5000 EGP'),
     ];
 
     return Scaffold(
       appBar: const CustomAppBar(
-        title: "Client",
+        title: "Tourism Companies",
       ),
       body: SingleChildScrollView(
         child: Column(
