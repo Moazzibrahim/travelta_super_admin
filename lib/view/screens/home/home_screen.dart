@@ -48,9 +48,18 @@ class HomeScreen extends StatelessWidget {
                       label: 'Client',
                     ),
                   ),
-                  const GridItem(
-                    imagePath: 'assets/images/Icon Container.png',
-                    label: 'Tourism Companies',
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  const TourismCompaniesScreen()));
+                    },
+                    child: const GridItem(
+                      imagePath: 'assets/images/Icon Container.png',
+                      label: 'Tourism Companies',
+                    ),
                   ),
                   const GridItem(
                     imagePath: 'assets/images/Menu Icon.png',
